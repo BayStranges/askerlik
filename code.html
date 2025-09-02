@@ -188,26 +188,6 @@
             }
         });
 
-        // Feature: Upload Photo
-        const uploadPhotoBtn = document.getElementById('uploadPhotoBtn');
-        const photoInput = document.getElementById('photoInput');
-        const photoGallery = document.getElementById('photoGallery');
-        uploadPhotoBtn.addEventListener('click', () => {
-            const file = photoInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = `User-uploaded memory photo from military service: ${file.name}`;
-                    img.className = 'rounded-lg shadow-lg';
-                    photoGallery.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-                photoInput.value = '';
-            }
-        });
-
         // Feature: Share Story
         const submitStoryBtn = document.getElementById('submitStoryBtn');
         const storyInput = document.getElementById('storyInput');
